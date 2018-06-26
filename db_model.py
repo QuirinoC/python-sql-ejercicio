@@ -11,7 +11,7 @@ class Manager:
     sql_command = f'INSERT INTO office(id, name) VALUES (NULL, \'{name}\')'
     self.insert(self.cursor, sql_command)
   def insertEmployee(self, name, lastNme, gender, birth_date, officeId):
-    sql_command = f'INSERT INTO empployee(id, name, lastNme, gender, birth_date, officeId) VALUES (NULL, \'{name}\', \'{lastNme}\', \'{gender}\', \'{birth_date}\', \'{officeId}\');'
+    sql_command = f'INSERT INTO employee(id, name, lastNme, gender, birth_date, officeId) VALUES (NULL, \'{name}\', \'{lastNme}\', \'{gender}\', \'{birth_date}\', \'{officeId}\');'
     self.insert(self.cursor, sql_command)
   def query(self, sentence):
     self.cursor.execute()

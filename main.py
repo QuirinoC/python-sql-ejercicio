@@ -19,17 +19,30 @@ while True:
     option=input('> ')
     if option in options:
         #1
-
+        if option == '1':
+            #Renato
+            pass
         #2
-        
+        if option == '2':
+            name = input("Name: ")
+            lastName = input("Last name: ")
+            gender = input("Gender: ")
+            birth_date = input("Birthdate YYYY-MM-DD: ")
+            officeId = int(input("Office id: "))
+            db_manager.insertEmployee(name,lastName,gender,birth_date,officeId)
+            connection.commit()
+            input()
         #3
-
+        if option == '3':
+            print(cursor.execute('SELECT * FROM office'))
         #4
-
+        if option == '3':
+            pass
         #5
-
-        #6
-
+        if option == '3':
+            pass
+        if option == '3':
+            pass
     else:
         #Prompt for invalid input
         os.system('cls' if os.name == 'nt' else 'clear')

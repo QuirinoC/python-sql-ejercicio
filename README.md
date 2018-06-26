@@ -1,0 +1,1 @@
+https://github.com/QuirinoC/python-sql-ejercicio/invitations

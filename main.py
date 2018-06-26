@@ -36,12 +36,12 @@ while True:
         if option == '3':
             print(cursor.execute('SELECT * FROM office'))
         #4
-        if option == '3':
+        if option == '4':
             pass
         #5
-        if option == '3':
+        if option == '5':
             pass
-        if option == '3':
+        if option == '6':
             pass
     else:
         #Prompt for invalid input

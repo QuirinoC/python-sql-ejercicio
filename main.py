@@ -13,12 +13,25 @@ menu=[
     '[6] Salir',
 ]
 while True:
+    #Prompt
     os.system('cls' if os.name == 'nt' else 'clear')
     print(*menu, sep='\n')
     option=input('> ')
     if option in options:
-        pass
+        #1
+
+        #2
+        
+        #3
+
+        #4
+
+        #5
+
+        #6
+
     else:
+        #Prompt for invalid input
         os.system('cls' if os.name == 'nt' else 'clear')
         print('Invalid option')
         input()

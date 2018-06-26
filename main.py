@@ -12,16 +12,20 @@ menu=[
     '[5] Mostrar las oficinas de un empleado en especifico',
     '[6] Salir',
 ]
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 while True:
     #Prompt
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear()
     print(*menu, sep='\n')
     option=input('> ')
     if option in options:
+        clear()
         #1
         if option == '1':
-            #Renato
-            pass
+            name = input("Name: ")
+            db_manager.insertOffice(name)
+            connection.commit()
         #2
         if option == '2':
             name = input("Name: ")
@@ -31,21 +35,30 @@ while True:
             officeId = int(input("Office id: "))
             db_manager.insertEmployee(name,lastName,gender,birth_date,officeId)
             connection.commit()
-            input()
+
         #3
         if option == '3':
-            print(cursor.execute('SELECT * FROM office'))
+            print("Offices available")
+            print(*cursor.execute('SELECT * FROM office').fetchall(),sep='\n')
+
         #4
         if option == '4':
-            pass
+            print("Employees available")
+            print(*cursor.execute('SELECT * FROM employee').fetchall(),sep='\n')
         #5
         if option == '5':
-            pass
+            #Prompt the users in the database
+            print(*cursor.execute('SELECT * FROM employee').fetchall(),sep='\n')
+            id_ = input("Employee id > ")
+
+            print(*cursor.execute(f'select * from office where id =(select officeId from employee where id={id_})').fetchall(),sep='\n')
         if option == '6':
-            pass
+            print("Bye bye")
+            break;
+        input()
     else:
         #Prompt for invalid input
-        os.system('cls' if os.name == 'nt' else 'clear')
+        clear()
         print('Invalid option')
         input()
         continue
